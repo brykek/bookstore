@@ -14,7 +14,7 @@ namespace Bookstore.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private IBookRepository _repository;
-
+        //adds repository of books 
         public HomeController(ILogger<HomeController> logger, IBookRepository respository)
         {
             _logger = logger;
@@ -23,6 +23,7 @@ namespace Bookstore.Controllers
 
         public IActionResult Index()
         {
+            //prints out the seed data of books to enumerate in the index page
             return View(_repository.Books);
         }
 

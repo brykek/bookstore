@@ -6,6 +6,7 @@ namespace Bookstore2.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            //this is all done automatically after running dotnet ef migrate add Initial
             migrationBuilder.CreateTable(
                 name: "Books",
                 columns: table => new

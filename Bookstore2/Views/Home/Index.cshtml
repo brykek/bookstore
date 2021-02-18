@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<!--main page that displays the information from the database.-->
 @model IQueryable<Book>
 
 <header>
@@ -9,12 +9,13 @@
 </header>
 
 <div>
+    <!--Bootstrap classes to style the table, columns, and rows-->
     <table class="table table-bordered table-hover m-3">
         <thead class="thead-dark">
             <tr class="m-3">
                 <th scope="col" class="p-3">BookID</th>
                 <th scope="col" class="p-3">Title</th>
-                <th  scope="col" class="p-3">Author's First Name</th>
+                <th scope="col" class="p-3">Author's First Name</th>
                 <th scope="col" class="p-3">Author's Middle Name/Initial</th>
                 <th scope="col" class="p-3">Author's Last Name</th>
                 <th scope="col" class="p-3">Publisher</th>
@@ -25,22 +26,23 @@
             </tr>
         </thead>
         <tbody>
+            <!--loops through each seed data in the model-->
             @foreach (Bookstore2.Models.Book x in Model)
             {
-            <tr class="m-3">
-                <td class="p-3">@x.BookID</td>
-                <td class="p-3">@x.Title</td>
-                <td class="p-3">@x.AuthorFirst</td>
-                <td class="p-3">@x.AuthorMiddle</td>
-                <td class="p-3">@x.AuthorLast</td>
-                <td class="p-3">@x.Publisher</td>
-                <td class="p-3">@x.ISBN</td>
-                <td class="p-3">@x.Classification</td>
-                <td class="p-3">@x.Category</td>
-                <td class="p-3">@x.Price</td>
-            </tr>
-                }
+                <tr class="m-3">
+                    <td class="p-3">@x.BookID</td>
+                    <td class="p-3">@x.Title</td>
+                    <td class="p-3">@x.AuthorFirst</td>
+                    <td class="p-3">@x.AuthorMiddle</td>
+                    <td class="p-3">@x.AuthorLast</td>
+                    <td class="p-3">@x.Publisher</td>
+                    <td class="p-3">@x.ISBN</td>
+                    <td class="p-3">@x.Classification</td>
+                    <td class="p-3">@x.Category</td>
+                    <td class="p-3">@x.Price</td>
+                </tr>
+            }
 
-</tbody>
+        </tbody>
     </table>
 </div>
