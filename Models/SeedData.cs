@@ -11,7 +11,7 @@ namespace Bookstore2.Models
         public static void EnsurePopulated(IApplicationBuilder application)
         {
             BookDbContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<BookDbContext>();
-
+            //aids in the migration of the model to database
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
@@ -19,6 +19,7 @@ namespace Bookstore2.Models
             }
             if (!context.Books.Any())
             {
+                //10 objects of seed data to populate the database
                 context.Books.AddRange(
                     new Book
                     {
