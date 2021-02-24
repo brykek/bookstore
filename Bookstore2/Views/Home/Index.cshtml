@@ -2,15 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 <!--main page that displays the information from the database.-->
-@model IQueryable<Book>
+@model BookListViewModel
 
 <header>
-    <h1>Spencer's Top 10 Books</h1>
+    <h1>IS413 Booklist</h1>
 </header>
 
 <div>
-    <!--Bootstrap classes to style the table, columns, and rows-->
-    <table class="table table-bordered table-hover m-3">
+    <!--Bootstrap classes to style the table, columns, and rows. I used thead-dark, table-bordered, table-hover, and changed the color of all the rows-->
+    <table class="table table-bordered table-hover table-striped m-3">
         <thead class="thead-dark">
             <tr class="m-3">
                 <th scope="col" class="p-3">BookID</th>
@@ -23,26 +23,30 @@
                 <th scope="col" class="p-3">Classification</th>
                 <th scope="col" class="p-3">Category</th>
                 <th scope="col" class="p-3">Price</th>
+                <th scope="col" class="p-3">Number of Pages</th>
             </tr>
         </thead>
         <tbody>
             <!--loops through each seed data in the model-->
-            @foreach (Bookstore2.Models.Book x in Model)
+            @foreach (Bookstore2.Models.Book x in Model.Books)
             {
-                <tr class="m-3">
-                    <td class="p-3">@x.BookID</td>
-                    <td class="p-3">@x.Title</td>
-                    <td class="p-3">@x.AuthorFirst</td>
-                    <td class="p-3">@x.AuthorMiddle</td>
-                    <td class="p-3">@x.AuthorLast</td>
-                    <td class="p-3">@x.Publisher</td>
-                    <td class="p-3">@x.ISBN</td>
-                    <td class="p-3">@x.Classification</td>
-                    <td class="p-3">@x.Category</td>
-                    <td class="p-3">@x.Price</td>
-                </tr>
+            <tr class="m-3 table-info" >
+                <td class="p-3">@x.BookID</td>
+                <td class="p-3">@x.Title</td>
+                <td class="p-3">@x.AuthorFirst</td>
+                <td class="p-3">@x.AuthorMiddle</td>
+                <td class="p-3">@x.AuthorLast</td>
+                <td class="p-3">@x.Publisher</td>
+                <td class="p-3">@x.ISBN</td>
+                <td class="p-3">@x.Classification</td>
+                <td class="p-3">@x.Category</td>
+                <td class="p-3">@x.Price</td>
+                <td class="p-3">@x.NumberofPages</td>
+            </tr>
             }
 
         </tbody>
     </table>
+
+    <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-info" page-class-selected="btn btn-info" class="btn-group pull-right m-1"></div>
 </div>

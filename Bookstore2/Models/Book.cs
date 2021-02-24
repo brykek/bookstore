@@ -30,5 +30,7 @@ namespace Bookstore2.Models
         public string Category { get; set; }
         [Required]
         public double Price { get; set; }
+        [Required]
+        public int NumberofPages { get; set; }
     }
 }
