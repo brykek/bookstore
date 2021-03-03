@@ -26,8 +26,15 @@ using Bookstore2.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/bryankekauoha/Projects/Bookstore2/Bookstore2/Views/_ViewImports.cshtml"
+using Bookstore2.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f400a24e4f1c1f8dbc87c0f761266a45e781e06b", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a0a473394ae45152e2c4f0c7091893e4aa3d5288", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8ee38029a720be0037205dd06a49db54184e38c0", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

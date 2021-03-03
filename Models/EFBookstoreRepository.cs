@@ -13,7 +13,7 @@ namespace Bookstore2.Models
         {
             _context = context;
         }
-
+        //queries through our list of books
         public IQueryable<Book> Books => _context.Books;
     }
 }

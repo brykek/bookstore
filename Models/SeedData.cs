@@ -19,7 +19,7 @@ namespace Bookstore2.Models
             }
             if (!context.Books.Any())
             {
-                //10 objects of seed data to populate the database
+                //13 objects of seed data to populate the database
                 context.Books.AddRange(
                     new Book
                     {
@@ -30,7 +30,8 @@ namespace Bookstore2.Models
                         ISBN = "978-0451419439",
                         Classification = "Fiction",
                         Category = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        NumberofPages = 1488
 
                     },
                     new Book
@@ -43,7 +44,8 @@ namespace Bookstore2.Models
                         ISBN = "978-0743270755",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        NumberofPages = 944
 
                     },
                     new Book
@@ -55,7 +57,8 @@ namespace Bookstore2.Models
                         ISBN = "978-0553384611 ",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 21.54
+                        Price = 21.54,
+                        NumberofPages = 832
 
                     },
                     new Book
@@ -68,7 +71,8 @@ namespace Bookstore2.Models
                         ISBN = "978-0812981254",
                         Classification = "Non-Fiction",
                         Category = "Biography",
-                        Price = 11.61
+                        Price = 11.61,
+                        NumberofPages = 864
 
                     },
                   new Book
@@ -80,7 +84,8 @@ namespace Bookstore2.Models
                       ISBN = "978-0812974492",
                       Classification = "Non-Fiction",
                       Category = "Historical",
-                      Price = 13.33
+                      Price = 13.33,
+                      NumberofPages = 528
 
                   },
                   new Book
@@ -92,7 +97,8 @@ namespace Bookstore2.Models
                       ISBN = "978-0804171281",
                       Classification = "Fiction",
                       Category = "Historical Fiction",
-                      Price = 15.95
+                      Price = 15.95,
+                      NumberofPages = 288
 
                   },
                   new Book
@@ -104,7 +110,8 @@ namespace Bookstore2.Models
                       ISBN = "978-1455586691",
                       Classification = "Non-Fiction",
                       Category = "Self-Help",
-                      Price = 14.99
+                      Price = 14.99,
+                      NumberofPages = 304
 
                   },
                   new Book
@@ -116,7 +123,8 @@ namespace Bookstore2.Models
                       ISBN = "978-1455523023",
                       Classification = "Non-Fiction",
                       Category = "Self-Help",
-                      Price = 21.66
+                      Price = 21.66,
+                      NumberofPages = 240
 
                   },
 
@@ -129,7 +137,8 @@ namespace Bookstore2.Models
                       ISBN = "978-1591847984",
                       Classification = "Non-Fiction",
                       Category = "Business",
-                      Price = 29.16
+                      Price = 29.16,
+                      NumberofPages = 400
 
                   },
                   new Book
@@ -141,7 +150,51 @@ namespace Bookstore2.Models
                       ISBN = "978-0553393613",
                       Classification = "Fiction",
                       Category = "Thrillers",
-                      Price = 15.03
+                      Price = 15.03,
+                      NumberofPages = 642
+
+                  },
+
+                  new Book
+                  {
+                      Title = "Catcher in the Rye",
+                      AuthorFirst = "J.",
+                      AuthorMiddle = "D.",
+                      AuthorLast = "Salinger",
+                      Publisher = "Little, Brown and Company",
+                      ISBN = "978-7543321724",
+                      Classification = "Fiction",
+                      Category = "Classic",
+                      Price = 5.99,
+                      NumberofPages = 240
+
+                  },
+
+                  new Book
+                  {
+                      Title = "The Kite Runner",
+                      AuthorFirst = "Khaled",
+                      AuthorLast = "Hosseini",
+                      Publisher = "Riverhead Books",
+                      ISBN = "978-1594631931",
+                      Classification = "Fiction",
+                      Category = "Historical Fiction",
+                      Price = 12.57,
+                      NumberofPages = 400
+
+                  },
+
+                  new Book
+                  {
+                      Title = "Native Son",
+                      AuthorFirst = "Richard",
+                      AuthorLast = "Wright",
+                      Publisher = "Harper Perennial Modern Classics",
+                      ISBN = "978-0060837563",
+                      Classification = "Fiction",
+                      Category = "Crime",
+                      Price = 11.99,
+                      NumberofPages = 544
 
                   }
 

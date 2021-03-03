@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bookstore2</title>
+    <title>@ViewData["Title"] - Bookstore</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -29,6 +29,9 @@
             </div>
         </nav>
     </header>
+    <div class="categories">
+        <vc:navigation-menu></vc:navigation-menu>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

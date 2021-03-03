@@ -75,3 +75,15 @@ body {
 nav {
     background-color: #ffae2b;
 }
+
+.categories {
+    margin:2rem;
+    display:flex;
+    justify-content:center;
+
+}
+.egg {
+    max-width: 10rem;
+    margin:.5rem;
+}
+

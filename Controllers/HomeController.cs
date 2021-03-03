@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bookstore2.Models;
+using Bookstore2.Models.ViewModels;
 
 namespace Bookstore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        public int PageSize = 5;
 
         private IBookRepository _repository;
         //adds repository of books 
@@ -21,13 +24,25 @@ namespace Bookstore.Controllers
             _repository = respository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string category, int page = 1)
         {
-            //prints out the seed data of books to enumerate in the index page
-            return View(_repository.Books);
+            return View(new BookListViewModel
+            {
+                //this line filters the category and pages
+                Books = _repository.Books.Where(b => category == null || b.Category == category).OrderBy(b => b.BookID).Skip((page - 1) * PageSize).Take(PageSize)
+                ,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = category == null ? _repository.Books.Count() : _repository.Books.Where(x => x.Category == category).Count()
+                },
+                Category = category
+            }) ;
+            
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy() 
         {
             return View();
         }
