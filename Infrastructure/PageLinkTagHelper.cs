@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Bookstore2.Infrastructure
 {
+    //adds a div for the url model on each page
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTagHelper : TagHelper
     {
@@ -24,7 +25,7 @@ namespace Bookstore2.Infrastructure
         public ViewContext ViewContext {get;set;}
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
-
+        //dictionary for page urls
         [HtmlAttributeName(DictionaryAttributePrefix ="page-url-")]
         public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
 

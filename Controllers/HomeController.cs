@@ -13,7 +13,7 @@ namespace Bookstore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        //number of records on each page
         public int PageSize = 5;
 
         private IBookRepository _repository;
@@ -33,6 +33,7 @@ namespace Bookstore.Controllers
                 ,
                 PagingInfo = new PagingInfo
                 {
+                    //pagination
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalNumItems = category == null ? _repository.Books.Count() : _repository.Books.Where(x => x.Category == category).Count()
