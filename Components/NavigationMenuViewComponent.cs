@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Bookstore2.Components
 {
+    //view component for our categories
     public class NavigationMenuViewComponent : ViewComponent
     {
         private IBookRepository repository;

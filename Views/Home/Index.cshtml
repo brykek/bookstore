@@ -3,7 +3,6 @@
 }
 <!--main page that displays the information from the database.-->
 @model BookListViewModel
-
 <header>
     <h1>IS413 Booklist</h1>
 </header>
@@ -24,25 +23,15 @@
                 <th scope="col" class="p-3">Category</th>
                 <th scope="col" class="p-3">Price</th>
                 <th scope="col" class="p-3">Number of Pages</th>
+                <th scope="col" class="p-3">Cart</th>
             </tr>
         </thead>
         <tbody>
             <!--loops through each seed data in the model-->
             @foreach (Bookstore2.Models.Book x in Model.Books)
             {
-            <tr class="m-3 table-info" >
-                <td class="p-3">@x.BookID</td>
-                <td class="p-3">@x.Title</td>
-                <td class="p-3">@x.AuthorFirst</td>
-                <td class="p-3">@x.AuthorMiddle</td>
-                <td class="p-3">@x.AuthorLast</td>
-                <td class="p-3">@x.Publisher</td>
-                <td class="p-3">@x.ISBN</td>
-                <td class="p-3">@x.Classification</td>
-                <td class="p-3">@x.Category</td>
-                <td class="p-3">@x.Price</td>
-                <td class="p-3">@x.NumberofPages</td>
-            </tr>
+                <partial name="BookSummary" model="x" />
+
             }
 
         </tbody>
